@@ -1,0 +1,37 @@
+---
+import About from '../components/sections/About.astro';
+import Education from '../components/sections/Education.astro';
+import Experience from '../components/sections/Experience.astro';
+import Hero from '../components/sections/Hero.astro';
+import Layout from '../layouts/Layout.astro';
+import Projects from '../components/sections/Projects.astro';
+import Skills from '../components/sections/Skills.astro';
+import Certificates from '../components/sections/Certificates.astro';
+import KeyBoardManager from '../components/KeyBoardManager.astro';
+
+import { basics, work, certificates } from '../../cv.json';
+const { name } = basics;
+---
+
+<Layout title={`Portafolio de ${name}`}>
+   <main>
+      <Hero />
+      <About />
+      <Education />
+
+      {work.length === 0 && certificates.length > 0 && <Certificates />}
+      {work.length > 0 && <Experience />}
+
+      <Skills />
+      <Projects />
+   </main>
+   <KeyBoardManager />
+</Layout>
+
+<style>
+   main {
+      padding: 4rem;
+      margin: auto;
+      width: 100%;
+   }
+</style>

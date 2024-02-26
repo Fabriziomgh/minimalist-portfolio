@@ -1,0 +1,79 @@
+---
+import Section from '../Section.astro';
+import { projects } from '../../../cv.json';
+import GitHub from '../../icons/GitHub.astro';
+---
+
+<Section title="Proyectos">
+   <ul>
+      {
+         projects.map(({ url, description, isActive, github, name }) => {
+            console.log(github);
+            return (
+               <li>
+                  <article>
+                     <header>
+                        <h3>
+                           <a href={url} title={`Ver el proyecto ${name}`}>
+                              {name}
+                           </a>
+                           {isActive && <span> &bull;</span>}
+                           {github && (
+                              <a
+                                 class="github-code-link"
+                                 href={github}
+                                 target="_blank"
+                                 title={`Ver código fuente del proyecto ${name}`}
+                              >
+                                 <GitHub />
+                              </a>
+                           )}
+                        </h3>
+                        <p>{description}</p>
+                     </header>
+                  </article>
+               </li>
+            );
+         })
+      }
+   </ul>
+</Section>
+
+<style>
+   .github-code-link {
+      margin-left: 5px;
+   }
+   ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+   }
+   article {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border: 1px solid #c7c7c7;
+      border-radius: 10px;
+      height: 100%;
+      padding: 0.85rem;
+   }
+   article h3 span {
+      color: #0ace0a;
+   }
+   article h3 {
+      margin-bottom: 4px;
+   }
+   article a {
+      color: #111;
+   }
+   article p {
+      font-size: 0.75rem;
+      line-height: 1.2rem;
+   }
+   article a:hover {
+      text-decoration: underline;
+   }
+   article header {
+      flex: 1;
+   }
+</style>

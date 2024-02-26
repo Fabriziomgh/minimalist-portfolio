@@ -1,0 +1,78 @@
+---
+import Section from '../Section.astro';
+import { certificates } from '../../../cv.json';
+import Url from '../../icons/Url.astro';
+---
+
+<Section title="Certificados">
+   <ul>
+      {
+         certificates.map(({ name, date, issuer, url }) => {
+            const period = new Date(date);
+            const dated = period.toLocaleString('es-ES', {
+               day: '2-digit',
+               month: 'numeric',
+               year: 'numeric',
+            });
+            return (
+               <li>
+                  <article>
+                     <header>
+                        <div>
+                           <div class="info">
+                              <h3>{issuer}</h3>
+                              <span>&bull;</span>
+                              <a
+                                 href={url}
+                                 target="_blank"
+                                 title={`Visitar página web del certificado ${url}`}
+                              >
+                                 <Url />
+                              </a>
+                           </div>
+                           <h4>{name}</h4>
+                        </div>
+                        <time>{dated}</time>
+                     </header>
+                  </article>
+               </li>
+            );
+         })
+      }
+   </ul>
+</Section>
+
+<style>
+   ul {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+   }
+   article h3 {
+      color: #252525;
+      font-weight: 500;
+      max-width: 400px;
+   }
+   article h4 {
+      color: #222;
+      font-weight: 400;
+      font-style: italic;
+   }
+   header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+   }
+   time {
+      font-size: 0.85rem;
+   }
+   .info {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+   }
+   .info a {
+      color: #222;
+   }
+</style>
