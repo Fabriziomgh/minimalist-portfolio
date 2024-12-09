@@ -9,8 +9,8 @@
       "summary": "Mi objetivo es utilizar mis habilidades y conocimientos para crear experiencias web interactivas y eficientes. Mi compromiso con la mejora continua y mi pasión por la tecnología me impulsan a estar siempre al día con las últimas tendencias y mejores prácticas en el desarrollo frontend.",
       "location": {
          "address": "",
-         "postalCode": "4101",
-         "city": "Punto Fijo",
+         "postalCode": "",
+         "city": "Falcón",
          "countryCode": "VE",
          "region": "Venezuela"
       },
@@ -44,7 +44,7 @@
          "institution": "UNEFA",
          "url": "http://www.unefa.edu.ve/portal/",
          "area": "Ingeniero de Sistemas",
-         "studyType": "Bachelor",
+         "studyType": "Ingeniería",
          "startDate": "2019-01-01",
          "endDate": "2024-06-01",
          "score": "4.0",
@@ -65,6 +65,18 @@
          "date": "2022-02-21",
          "issuer": "Platzi",
          "url": "https://platzi.com/p/fabrizio.miguel.gutierres/curso/1050-basico-programacion/diploma/detalle/"
+      },
+      {
+         "name": "Master JavaScript with Node.js",
+         "date": "2024-11-04",
+         "issuer": "Udemy",
+         "url": "https://www.udemy.com/certificate/UC-20a7294e-baa2-4ae8-81c2-b6a7d6f007c3/"
+      },
+      {
+         "name": " Tailwind CSS Start to Mastery with 18 Project Examples 2024",
+         "date": "2024-11-04",
+         "issuer": "Udemy",
+         "url": "https://www.udemy.com/certificate/UC-8413a096-07f3-4bf3-af18-6cf751c32755/"
       }
    ],
    "publications": [
@@ -133,6 +145,11 @@
          "name": "React",
          "level": "Avanzado",
          "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+      },
+      {
+         "name": "Next",
+         "level": "Avanzado",
+         "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
       }
    ],
    "languages": [
@@ -165,6 +182,14 @@
          "highlights": ["Elige la respuesta correcta", "Variedad de preguntas"],
          "url": "https://js-quizz.vercel.app/",
          "github": "https://github.com/Fabriziomgh/js-quizz"
+      },
+      {
+         "name": "To do List App",
+         "isActive": true,
+         "description": "Hecho con Next.js y Supabase, con auth.js para manejar autenticación",
+         "highlights": ["Registra tareas", "Mantente organizado"],
+         "url": "https://todolist-app-six-nu.vercel.app/",
+         "github": "https://github.com/Fabriziomgh/todolist-app"
       }
    ]
 }
