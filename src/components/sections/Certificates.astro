@@ -2,18 +2,14 @@
 import Section from '../Section.astro';
 import { certificates } from '../../../cv.json';
 import Url from '../../icons/Url.astro';
+import { format } from '@formkit/tempo';
 ---
 
 <Section title="Certificados">
    <ul>
       {
          certificates.map(({ name, date, issuer, url }) => {
-            const period = new Date(date);
-            const dated = period.toLocaleString('es-ES', {
-               day: '2-digit',
-               month: 'numeric',
-               year: 'numeric',
-            });
+            const dated = format(date, 'medium');
             return (
                <li>
                   <article>
@@ -30,7 +26,7 @@ import Url from '../../icons/Url.astro';
                                  <Url />
                               </a>
                            </div>
-                           <h4>{name}</h4>
+                           <h4 class="name">{name}</h4>
                         </div>
                         <time>{dated}</time>
                      </header>
@@ -74,5 +70,8 @@ import Url from '../../icons/Url.astro';
    }
    .info a {
       color: #222;
+   }
+   .name {
+      width: 14rem;
    }
 </style>
