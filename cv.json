@@ -1,6 +1,7 @@
 {
    "basics": {
       "name": "Fabrizio M. Gutiérrez Hernández",
+      "level": "Ingeniero de Sistemas",
       "label": "Desarrollador Web - Frontend",
       "image": "https://avatars.githubusercontent.com/u/91578919?s=400&u=e6f20564ff0b856ec9136a4d5fce966ddd078bcb&v=4",
       "email": "gutierrezfabrizio02@gmail.com",
@@ -43,7 +44,7 @@
       {
          "institution": "UNEFA",
          "url": "http://www.unefa.edu.ve/portal/",
-         "area": "Ingeniero de Sistemas",
+         "area": "Ingeniería de Sistemas",
          "studyType": "Ingeniería",
          "startDate": "2019-01-01",
          "endDate": "2024-06-01",

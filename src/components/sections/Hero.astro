@@ -8,7 +8,7 @@ import X from '../../icons/X.astro';
 import GitHub from '../../icons/GitHub.astro';
 import LinkedIn from '../../icons/LinkedIn.astro';
 
-const { name, label, image, email, phone, location, profiles } = basics;
+const { name, label, image, email, level, location, profiles } = basics;
 const { city, region } = location;
 
 const SOCIAL_ICONS = {
@@ -22,7 +22,10 @@ const SOCIAL_ICONS = {
    <div class="conteiner">
       <div class="info">
          <h1>{name}</h1>
-         <h2>{label}</h2>
+         <div class="levels">
+            <h2>{level}</h2>
+            <h2>{label}</h2>
+         </div>
          <span>
             <WorldMap />
             {city}, {region}
@@ -109,7 +112,9 @@ const SOCIAL_ICONS = {
       font-weight: 500;
       font-size: 1.1rem;
       padding-right: 32px;
+      margin-bottom: 3px;
    }
+
    img {
       aspect-ratio: 1 / 1;
       object-fit: cover;
