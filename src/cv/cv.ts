@@ -221,5 +221,13 @@ export const cv = {
          url: 'https://todolist-app-six-nu.vercel.app/',
          github: 'https://github.com/Fabriziomgh/todolist-app',
       },
+      {
+         name: 'Minimalist Portfolio',
+         isActive: true,
+         description: 'Portafolio minimalista basado en un archivo JSON.',
+         highlights: ['React', 'Typescript', 'Tailwind', 'Ninja Keys'],
+         url: 'https://fg-minimalist-portfolio.vercel.app/',
+         github: 'https://github.com/Fabriziomgh/minimalist-portfolio',
+      },
    ],
 } as const;
