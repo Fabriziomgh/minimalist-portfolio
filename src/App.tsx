@@ -7,7 +7,7 @@ import Projects from '@/sections/Projects';
 import CommandMenu from '@/components/CommandMenu';
 export default function App() {
    return (
-      <main className="px-4 py-6 lg:mt-16 antialiased max-w-3xl mx-auto">
+      <main className="px-4 py-6 lg:pt-16 antialiased max-w-3xl mx-auto">
          <Hero />
          <About />
          <WorkExperience />

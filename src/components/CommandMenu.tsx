@@ -1,61 +1,37 @@
-import 'ninja-keys';
-import { useState, useRef, useEffect, MutableRefObject } from 'react';
+import { useState, useEffect } from 'react';
 import { TbCommand } from 'react-icons/tb';
 import { cv } from '@/cv/cv';
 
-interface NinjaKeysElement extends HTMLElement {
-   data: any;
-}
+import {
+   CommandDialog,
+   CommandGroup,
+   CommandItem,
+   CommandList,
+   CommandSeparator,
+} from '@/components/ui/command';
+import { DialogTitle } from '@/components/ui/dialog';
+import { Printer } from 'lucide-react';
 
 const socialNetworks = cv.basics.profiles;
-const data = socialNetworks.map(({ name, url }) => ({
-   id: name,
-   section: 'Redes Sociales',
-   title: `Visitar ${name}`,
-   url,
-   handler: () => {
-      window.open(url, '_blank');
-   },
-}));
 
-const actions = [
-   {
-      id: 'print',
-      title: 'Imprimir',
-      section: 'Acciones',
-      handler: () => {
-         window.print();
-      },
-   },
-   ,
-   ...data,
-];
 export default function App() {
-   const ninjaKeys: MutableRefObject<NinjaKeysElement | null> = useRef(null);
-   const [hotkeys] = useState(actions);
+   const [open, setOpen] = useState(false);
 
-   const handleButtonClick = () => {
-      const event = new KeyboardEvent('keydown', {
-         key: 'K',
-         code: 'KeyK',
-         keyCode: 75,
-         which: 75,
-         ctrlKey: true,
-         altKey: false,
-         shiftKey: false,
-         metaKey: false,
-      });
-      document.dispatchEvent(event);
-   };
+   const openCommandHandler = () => setOpen(true);
 
    useEffect(() => {
-      if (ninjaKeys.current) {
-         ninjaKeys.current.data = hotkeys;
-      }
-   }, []);
+      const down = (e: KeyboardEvent) => {
+         if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+            e.preventDefault();
+            setOpen((open) => !open);
+         }
+      };
 
+      document.addEventListener('keydown', down);
+      return () => document.removeEventListener('keydown', down);
+   }, []);
    return (
-      <div className="print:hidden">
+      <>
          <footer className="fixed bottom-0 right-0 left-0 pointer-events-none  hidden border-t border-t-slate-300 bg-white p-1 text-center print:hidden lg:block">
             <p>
                Presiona
@@ -66,12 +42,50 @@ export default function App() {
             </p>
          </footer>
          <button
-            onClick={handleButtonClick}
+            onClick={openCommandHandler}
             className="fixed bg-gray-300 bottom-4 p-1 right-4 flex rounded-full shadow-2xl print:hidden lg:hidden"
          >
-            <TbCommand size={40} className="" />
+            <TbCommand size={40} />
          </button>
-         <ninja-keys ref={ninjaKeys}></ninja-keys>
-      </div>
+
+         <CommandDialog open={open} onOpenChange={setOpen}>
+            <DialogTitle className="font-light p-4">
+               Lista de comandos
+            </DialogTitle>
+
+            <CommandList>
+               <CommandGroup heading="Acciones">
+                  <CommandItem asChild>
+                     <div
+                        onClick={() => {
+                           window.print();
+                        }}
+                        className="cursor-pointer"
+                     >
+                        <Printer />
+                        <span>Imprimir</span>
+                     </div>
+                  </CommandItem>
+               </CommandGroup>
+               <CommandSeparator />
+
+               <CommandGroup heading="Redes sociales">
+                  {socialNetworks.map(({ icon: Icon, name, url }) => (
+                     <CommandItem asChild key={name}>
+                        <a
+                           className="cursor-pointer"
+                           title={`Visitar perfíl de ${name}`}
+                           href={url}
+                           target="_blank"
+                        >
+                           <Icon />
+                           <span>{name}</span>
+                        </a>
+                     </CommandItem>
+                  ))}
+               </CommandGroup>
+            </CommandList>
+         </CommandDialog>
+      </>
    );
 }

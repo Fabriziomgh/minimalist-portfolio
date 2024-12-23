@@ -31,7 +31,7 @@ export default function Skills() {
                return (
                   <li key={name}>
                      <article className="bg-slate-800 text-slate-50 hover:bg-slate-600 transition-colors text-sm font-mono py-1 px-6 rounded-xl">
-                        <div className="flex items-center gap-x-1 ">
+                        <div className="flex items-center gap-x-1">
                            {icons[name]}
                            {name}
                         </div>
