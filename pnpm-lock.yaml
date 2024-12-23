@@ -8,7 +8,7 @@ importers:
 
   .:
     dependencies:
-      '@fontsource-variable/outfit':
+      '@fontsource-variable/inter-tight':
         specifier: ^5.1.0
         version: 5.1.0
       '@formkit/tempo':
@@ -260,8 +260,8 @@ packages:
     resolution: {integrity: sha512-zSkKow6H5Kdm0ZUQUB2kV5JIXqoG0+uH5YADhaEHswm664N9Db8dXSi0nMJpacpMf+MyyglF1vnZohpEg5yUtg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fontsource-variable/outfit@5.1.0':
-    resolution: {integrity: sha512-WUZiMehPerX/sUWC65Ku9hQ741cJtkCiy5T9XSZd1XbyYudNd/qoZSbUyEbiC00+4rGheNcKzaFdMGp5uonQog==}
+  '@fontsource-variable/inter-tight@5.1.0':
+    resolution: {integrity: sha512-yUSW6LxZmHtbOvyWcQE73q/GbXp19WeVVF3HlKgRXIYjWjOzkR30N73myM/sDWqG4YyflYz/TRVJrzXOMSozag==}
 
   '@formkit/tempo@0.1.2':
     resolution: {integrity: sha512-jNPPbjL8oj7hK3eHX++CwbR6X4GKQt+x00/q4yeXkwynXHGKL27dylYhpEgwrmediPP4y7s0XtN1if/M/JYujg==}
@@ -1703,7 +1703,7 @@ snapshots:
     dependencies:
       levn: 0.4.1
 
-  '@fontsource-variable/outfit@5.1.0': {}
+  '@fontsource-variable/inter-tight@5.1.0': {}
 
   '@formkit/tempo@0.1.2': {}
 

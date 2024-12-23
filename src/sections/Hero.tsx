@@ -12,7 +12,9 @@ export default function Hero() {
       <section className="flex w-full flex-col-reverse md:flex-row md:justify-between md:mb-16">
          <div>
             <div className="text-center tracking-tight md:text-start">
-               <h1 className="text-3xl  font-bold text-gray-950">{name}</h1>
+               <h1 className="text-3xl lg:text-4xl font-bold text-gray-950">
+                  {name}
+               </h1>
                <div className="my-2">
                   <h3 className="text-gray-500 text-xl font-normal">{level}</h3>
                   <h2 className="text-gray-500 text-xl font-normal">{label}</h2>
